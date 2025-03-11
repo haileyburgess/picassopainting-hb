@@ -1,52 +1,67 @@
-/* set box sizing for the whole stylesheet */
-* {
-  box-sizing: border-box;
-  background-color: rgb(189, 247, 189);
-}
 /* set borders using border property shorthand */
-p {
-  border: 5px solid black;
-}
+/* p {
+  border: 5px solid black; */
+/* } */
 /* hover property */
-p:hover {
-  background-color: yellow;
-}
-/* calc styling uses percentages/ratios to set sizing */
-.main {
+/* p:hover { */
+  /* background-color: yellow; */
+/* }
+calc styling uses percentages/ratios to set sizing */
+/* .main {
   width: calc(100% - 200px);
   /* z index sets the depth aka which elements are in front of others */
-  z-index: 2;
+  /* z-index: 2; */ */
+/* } */
+* {
+    background-color:rgb(197, 249, 197);
+}
+body {
+    height: 100%;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    background-color:rgb(179, 252, 179);
 }
 .flex-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: center; */
   height: 100vh;
   z-index: -2;
 }
+.catbody-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row; /* Make sure the elements align in a row */
+}
 .head {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   border-radius: 50px;
   height: 100px;
   width: 100px;
   background-color: rgb(241, 169, 36);
   z-index: 2;
-  position: absolute;
-  left: 200px;
+  position: relative;
+  /* left: 200px; */
 }
 .catbody {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: space-between;
+  align-items: center; */
   border-radius: 50px;
   height: 150px;
   width: 200px;
   background-color: rgb(241, 169, 36);
   z-index: 2;
-  position: absolute;
-  margin-left: 10px;
+  /* position: absolute; */
+  /* margin-left: 10px; */
+  /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
 }
 .rug {
   display: flex;
@@ -58,30 +73,34 @@ p:hover {
   z-index: 0;
   position: absolute;
   border: 5px dashed peru;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 20px;
 }
 .tail {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   height: 20px;
   width: calc(100% - 580px);
   border-radius: 40%;
   background-color: white;
-  z-index: 1;
-  position: absolute;
-  top: 400px;
-  left: 340px;
+  z-index: 3;
+  position: relative;
+  /* top: 400px;
+  left: 340px; */
 }
 /* Media query for tablets (786px to 1024px) */
 @media (max-width: 1024px) {
   .head {
     height: 80px;
     width: 80px;
-    left: 370px;
+    /* left: 370px; */
   }
   .catbody {
     height: 120px;
     width: 160px;
-    margin-left: 5px;
+    /* margin-left: 5px; */
   }
   .rug {
     height: 240px;
@@ -89,9 +108,9 @@ p:hover {
   }
   .tail {
     height: 15px;
-    width: calc(100% - 900px);
-    top: 395px;
-    left: 560px;
+    width: 100px;
+    /* top: 395px;
+    left: 560px; */
 }
 }
 
@@ -100,52 +119,76 @@ p:hover {
   .head {
     height: 60px;
     width: 60px;
-    left: 140px;
+    /* left: 140px; */
   }
   .catbody {
     height: 90px;
     width: 120px;
-    margin-left: 2px;
+    /* margin-left: 2px; */
   }
   .rug {
-    height: 180px;
+    height: 150px;
     width: 270px;
+    margin-bottom: 30px;
   }
   .tail {
     height: 15px;
-    width: calc(100% - 300px);
-    top: 160px;
-    left: 185px;
+    width: 60px;
+    /* top: 160px;
+    left: 185px; */
+  }
+  .form-container h2 {
+    font-size: smaller;
+    margin-top: 50px;
+  }
+  .form-container {
+    display: flex;
+    margin-top: 20px;
   }
 }
 
 /* Media query for large screens (1050px and up) */
 @media (min-width: 1050px) {
+    .catbody-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
   .head {
     height: 120px;
     width: 120px;
-    left: calc(100% - 1050px);
+    /* left: calc(100% - 1050px); */
   }
   .catbody {
     height: 180px;
     width: 240px;
-    margin-left: 15px;
+    /* align-items: center; */
+    /* margin-left: 60px; */
   }
   .rug {
-    height: 360px;
-    width: 540px;
+    height: 400px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .tail {
     height: 25px;
-    width: 400px;
-    top: 520px;
-    margin-left: 360px;
+    width: 180px;
+    /* top: 520px;
+    margin-left: 360px; */
   }
 }
 .form-container {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    height: 100vh;
-    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    margin-bottom: 10px;
+    justify-content: flex-end;
+    margin-top: auto;
+}
+.form-container h2 {
+    margin-top: 0px;
 }
